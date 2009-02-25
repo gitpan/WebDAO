@@ -1,0 +1,8 @@
+=head1 NAME
+
+Install B<Webdao>.
+
+Documentation on how to write bindings/addons forthcoming.. 
+
+=cut
+
