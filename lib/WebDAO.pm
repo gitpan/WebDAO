@@ -1,4 +1,4 @@
-#$Id: WebDAO.pm 483 2009-02-25 19:31:33Z zag $
+#$Id: WebDAO.pm 495 2009-02-25 20:14:51Z zag $
 
 package WebDAO;
 
@@ -14,7 +14,7 @@ use WebDAO::Sessionco;
 use WebDAO::Lib::RawHTML;
 our @ISA = qw();
 
-our $VERSION = '1.00';
+our $VERSION = '1.01';
 
 
 
@@ -38,7 +38,7 @@ There are many environments in which the web applications work:
     | FastCGI                       CGI         |
     |           ------------------------        |
     |     nginx |                      |        |
-    |           |     You code         | isapi  |
+    |           |     Your code        | isapi  |
     |           |                      |        |
     |            ----------------------         |
     |  Shell            Test::More      IIS     |
