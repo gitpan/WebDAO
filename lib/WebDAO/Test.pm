@@ -1,5 +1,5 @@
 package WebDAO::Test;
-#$Id: Test.pm 483 2009-02-25 19:31:33Z zag $
+#$Id: Test.pm 504 2009-03-03 19:23:47Z zag $
 
 =head1 NAME
 
@@ -104,9 +104,10 @@ sub tree {
 
 =head2 xget
 
-get object by xpath query
+get object by path (query)
 
      $tlib->xget('/page')
+
 =cut
 
 sub xget {
@@ -115,9 +116,6 @@ sub xget {
     $path =~ s/^\///;
     my $eng = $self->{eng};
     return $eng->resolve_path( $eng->_session, $path );
-
-    #    $eng->_get_object_by_path([qw/page comp_auth /]);
-    #    return $self->{eng}->_get_obj_by_name($path);
 }
 
 =head2 get_by_path

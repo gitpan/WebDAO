@@ -1,5 +1,5 @@
 package WebDAO::Container;
-#$Id: Container.pm 483 2009-02-25 19:31:33Z zag $
+#$Id: Container.pm 504 2009-03-03 19:23:47Z zag $
 
 =head1 NAME
 
@@ -201,10 +201,6 @@ sub _get_object_by_path {
 
             #if element return point in any way
             return $obj
-
-              #            my $method = $path->[0] || 'index_html';
-              #            #if it element try to can method
-              #            return $obj->can($method) ? $obj : undef;
         }
     }
     else {

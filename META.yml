@@ -1,6 +1,6 @@
 ---
 name: WebDAO
-version: 1.01
+version: 1.02
 author:
   - 'Zahatski Aliaksandr, E<lt>zag@cpan.orgE<gt>'
 abstract: platform for easy creation of high-performance and scalable web applications
@@ -21,7 +21,7 @@ provides:
     file: lib/Apache/WebDAO.pm
   WebDAO:
     file: lib/WebDAO.pm
-    version: 1.01
+    version: 1.02
   WebDAO::Base:
     file: lib/WebDAO/Base.pm
   WebDAO::CVapache2:

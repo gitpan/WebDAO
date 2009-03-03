@@ -257,14 +257,7 @@ sub flush {
     #do self print file
     if ( $self->_is_file_send ) {
         my $fd = $self->__fh;
-
-        #        open FH,">/tmp/DATA.jpg";
-        #        print FH <$fd>;
-        #        close FH;
         $self->_cv_obj->print(<$fd>);
-
-        #        binmode ($fd);
-        #        print <$fd>;
         close($fd) if $self->_is_need_close_fh;
     }
     $self->_is_flushed(1);
@@ -298,10 +291,17 @@ sub html : lvalue {
     $self->{__html};
 }
 
+sub json: lvalue {
+
+}
 sub _destroy {
     my $self = shift;
     $self->{__html} = undef;
-    $self->auto( [] );
+#    $self->_headers( {} );
+#    $self->_call_backs( [] );
+#    $self->_cv_obj( undef );
+    $self->__session( undef);
+#    $self->auto( [] );
 }
 1;
 __DATA__

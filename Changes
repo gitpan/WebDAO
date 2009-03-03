@@ -1,5 +1,10 @@
 Revision history for Perl extension WebDAO.
-
+1.02
+    - fix memleaks
+    - clean deprecated code
+    - add method access  control
+1.01
+    - fix docs
 1.00
     - add examples
     - add debug levels; wdEngine Env var;
@@ -68,4 +73,4 @@ Revision history for Perl extension WebDAO.
 	- original version; created by h2xs 1.22
 	- import into sf.net cvs
 
-#$Id: Changes 485 2009-02-25 19:33:24Z zag $
+#$Id: Changes 507 2009-03-03 19:25:05Z zag $

@@ -1,5 +1,5 @@
 package WebDAO::Component;
-#$Id: Component.pm 483 2009-02-25 19:31:33Z zag $
+#$Id: Component.pm 500 2009-03-01 18:54:16Z zag $
 
 =head1 NAME
 
@@ -17,26 +17,6 @@ use WebDAO::Base;
 use base qw(WebDAO::Element);
 use strict 'vars';
 use Data::Dumper;
-
-sub _url_method {
-    my $self   = shift;
-    my $method = shift;
-    my $ref;
-    $ref->{path} = join '/' => $self->__path2me, $method;
-    my %args = @_;
-    $ref->{pars} = \%args if @_;
-    my $res;
-    $self->SendEvent(
-        "_sess_servise",
-        {
-            funct  => 'geturl',
-            par    => $ref,
-            result => \$res
-        }
-    );
-    return $res;
-
-}
 
 sub url_method {
     my $self   = shift;
