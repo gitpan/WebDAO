@@ -1,5 +1,5 @@
 package WebDAO::CVcgi;
-#$Id: CVcgi.pm 483 2009-02-25 19:31:33Z zag $
+#$Id: CVcgi.pm 584 2009-07-26 12:59:25Z zag $
 
 =head1 NAME
 
@@ -36,13 +36,9 @@ sub get_cookie {
 sub response {
     my $self = shift;
     my $res = shift || return;
-#    $self->_log1(Dumper(\$res));
-#    my $r = $self->_req;
-#    my $headers_out = $r->headers_out;
     my $cgi = $self->Cgi_obj;
-    print $cgi->header( map { $_ => $res->{headers}->{$_} } keys %{$res->{headers}} );
-#    $r->content_type($res->{type});
-    print $res->{data};
+    $self->print(  $cgi->header( map { $_ => $res->{headers}->{$_} } keys %{$res->{headers}} ) );
+    $self->print($res->{data});
 }
 
 sub print {

@@ -1,5 +1,5 @@
 package WebDAO::Session;
-#$Id: Session.pm 500 2009-03-01 18:54:16Z zag $
+#$Id: Session.pm 584 2009-07-26 12:59:25Z zag $
 
 =head1 NAME
 
@@ -178,16 +178,11 @@ sub print {
 
 sub ExecEngine() {
     my ( $self, $eng_ref ) = @_;
-
-    #print $self->print_header();
     $eng_ref->RegEvent( $self, "_sess_servise", \&sess_servise );
     $eng_ref->execute($self);
     $eng_ref->SendEvent("_sess_ended");
-
-    #print @{$eng_ref->Fetch()};
     $eng_ref->_destroy;
     $self->flush_session();
-
 }
 
 #for setup Output headers

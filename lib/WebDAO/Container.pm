@@ -1,5 +1,5 @@
 package WebDAO::Container;
-#$Id: Container.pm 504 2009-03-03 19:23:47Z zag $
+#$Id: Container.pm 584 2009-07-26 12:59:25Z zag $
 
 =head1 NAME
 
@@ -71,7 +71,9 @@ sub _add_childs {
       grep { ref $_ }
       map { ref($_) eq 'ARRAY' ? @$_ : $_ }
       map { $_->__get_self_refs }
-      grep { ref($_) && $_->can('__get_self_refs') } @_;
+      grep { ref($_) && $_->can('__get_self_refs') } 
+      map { ref($_) eq 'ARRAY' ? @$_ : $_ }
+      @_;
     return unless @childs;
     if ( $self->__parent ) {
         $_->_set_parent($self) for @childs;

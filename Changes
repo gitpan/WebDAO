@@ -1,4 +1,10 @@
 Revision history for Perl extension WebDAO.
+    
+1.03
+    - enhance traverse through object tree (__any_method hook)
+    - check if defined() method in url
+    - add mk_attr ,  mk_sess_attr for create accessors
+    - fix Container::_add_childs for support ref to array
 1.02
     - fix memleaks
     - clean deprecated code
@@ -10,7 +16,6 @@ Revision history for Perl extension WebDAO.
     - add debug levels; wdEngine Env var;
     - fix: generate session id in constructor( SessionSH)
     - rename namespace to WebDAO
-
 0.91
    - fix str number in logs message (HTML::WebDAO::Base::_log)
 0.90
@@ -73,4 +78,4 @@ Revision history for Perl extension WebDAO.
 	- original version; created by h2xs 1.22
 	- import into sf.net cvs
 
-#$Id: Changes 507 2009-03-03 19:25:05Z zag $
+#$Id: Changes 584 2009-07-26 12:59:25Z zag $

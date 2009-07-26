@@ -1,6 +1,6 @@
 package WebDAO::Engine;
 
-#$Id: Engine.pm 504 2009-03-03 19:23:47Z zag $
+#$Id: Engine.pm 584 2009-07-26 12:59:25Z zag $
 
 =head1 NAME
 
@@ -161,7 +161,19 @@ sub resolve_path {
     if ( my $object = $self->_get_object_by_path( \@path, $sess ) ) {
 
         #if object have index_x then stop traverse and call them
-        my $method = ( shift @path ) || 'Index_x';
+        my $method = shift @path;
+
+        #call __any_method unless exists defined method
+        if (    defined($method)
+            and !UNIVERSAL::can( $object, $method )
+            and UNIVERSAL::can( $object, '__any_method' ) )
+        {
+            unshift @path, $method;
+            return $object->__any_method( \@path, %{ $sess->Params } );
+
+        }
+
+        $method = 'Index_x' unless defined $method;
 
         #Check upper case First letter for method
         if ( ucfirst($method) ne $method ) {
