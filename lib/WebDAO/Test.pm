@@ -1,6 +1,6 @@
 package WebDAO::Test;
 
-#$Id: Test.pm 584 2009-07-26 12:59:25Z zag $
+#$Id: Test.pm 699 2010-01-29 09:18:25Z zag $
 
 =head1 NAME
 
@@ -200,6 +200,7 @@ sub xget {
 get object by resolve_path query
 
      $tlib->get_by_path('/page')
+     $tlib->get_by_path('/page', $root_object)
 =cut
 
 sub get_by_path {
@@ -207,7 +208,9 @@ sub get_by_path {
     my $path = shift;
     $path =~ s/^\///;
     my $eng  = $self->{eng};
+    my $root_obj  = shift || $eng;
     my $sess = $eng->_session;
+    return $root_obj->_get_object_by_path( $sess->call_path($path), $sess );
     return $eng->_get_object_by_path( $sess->call_path($path), $sess );
 }
 

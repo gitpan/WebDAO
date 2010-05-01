@@ -29,6 +29,7 @@ lib/WebDAO/Component.pm
 lib/WebDAO/Container.pm
 lib/WebDAO/CVapache2.pm
 lib/WebDAO/CVcgi.pm
+lib/WebDAO/CVfcgiutf8.pm
 lib/WebDAO/Element.pm
 lib/WebDAO/Engine.pm
 lib/WebDAO/FCGI/ProcManager.pm
@@ -52,6 +53,8 @@ lib/WebDAO/Store/Storable.pm
 lib/WebDAO/Test.pm
 Makefile.PL
 MANIFEST
+MANIFEST.SKIP
+MYMETA.yml
 README
 script/wd_cgi.pl
 script/wd_fcgi.fpl

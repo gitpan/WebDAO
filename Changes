@@ -1,5 +1,7 @@
 Revision history for Perl extension WebDAO.
     
+1.04
+    - fix utf-8 in output stream due update FCGI module ( >0.68)
 1.03
     - enhance traverse through object tree (__any_method hook)
     - check if defined() method in url
@@ -78,4 +80,4 @@ Revision history for Perl extension WebDAO.
 	- original version; created by h2xs 1.22
 	- import into sf.net cvs
 
-#$Id: Changes 584 2009-07-26 12:59:25Z zag $
+#$Id: Changes 749 2010-05-01 08:47:06Z zag $
