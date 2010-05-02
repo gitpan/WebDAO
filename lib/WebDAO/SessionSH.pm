@@ -1,5 +1,5 @@
 package WebDAO::SessionSH;
-#$Id: SessionSH.pm 483 2009-02-25 19:31:33Z zag $
+#$Id: SessionSH.pm 756 2010-05-02 12:18:38Z zag $
 
 =head1 NAME
 
@@ -22,6 +22,7 @@ use base qw( WebDAO::Session );
 sub Init {
     my $self = shift;
     my %args = @_;
+    #warn Dumper \%args;
     $self->SUPER::Init(@_);
     delete $args{store};
     $self->U_id( rand(100) );
@@ -36,11 +37,6 @@ sub sess_servise {
     my $self= shift;
     return $self->SUPER::sess_servise(@_)
 
-}
-
-sub ExecEngine() {
-    my ( $self, $eng_ref ) = @_;
-    $eng_ref->RegEvent( $self, "_sess_servise", \&sess_servise );
 }
 
 1;

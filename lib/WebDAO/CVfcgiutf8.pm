@@ -1,5 +1,5 @@
 package WebDAO::CVfcgiutf8;
-#$Id: CVfcgiutf8.pm 749 2010-05-01 08:47:06Z zag $
+#$Id: CVfcgiutf8.pm 750 2010-05-01 10:21:25Z zag $
 
 =head1 NAME
 
@@ -21,7 +21,7 @@ use strict;
 sub print {
     my $self = shift;
     foreach my $str (@_) {
-        utf8::encode( $str);
+        utf8::encode( $str) if utf8::is_utf8($str);
         print $str;
    }
 }

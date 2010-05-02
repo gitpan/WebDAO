@@ -1,5 +1,5 @@
 package WebDAO::CVcgi;
-#$Id: CVcgi.pm 584 2009-07-26 12:59:25Z zag $
+#$Id: CVcgi.pm 756 2010-05-02 12:18:38Z zag $
 
 =head1 NAME
 
@@ -37,7 +37,7 @@ sub response {
     my $self = shift;
     my $res = shift || return;
     my $cgi = $self->Cgi_obj;
-    $self->print(  $cgi->header( map { $_ => $res->{headers}->{$_} } keys %{$res->{headers}} ) );
+    $self->print(  $cgi->header( map { $_ => $res->{headers}->{$_} } keys %{$res->{headers}} ) ) if $res->{headers};
     $self->print($res->{data});
 }
 
