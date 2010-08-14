@@ -17,7 +17,7 @@ provides:
     file: lib/Apache/WebDAO.pm
   WebDAO:
     file: lib/WebDAO.pm
-    version: 1.05
+    version: 1.06
   WebDAO::Base:
     file: lib/WebDAO/Base.pm
   WebDAO::CVapache2:
@@ -85,4 +85,4 @@ requires:
   XML::LibXML: 0
 resources:
   license: http://dev.perl.org/licenses/
-version: 1.05
+version: 1.06
