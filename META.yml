@@ -15,9 +15,11 @@ provides:
     file: lib/Apache/Directives2.pm
   Apache::WebDAO:
     file: lib/Apache/WebDAO.pm
+  TestCV:
+    file: lib/WebDAO/Test.pm
   WebDAO:
     file: lib/WebDAO.pm
-    version: 1.06
+    version: 2.0_1
   WebDAO::Base:
     file: lib/WebDAO/Base.pm
   WebDAO::CVapache2:
@@ -59,6 +61,8 @@ provides:
     file: lib/WebDAO/Lib/MethodByPath.pm
   WebDAO::Lib::RawHTML:
     file: lib/WebDAO/Lib/RawHTML.pm
+  WebDAO::Modal:
+    file: lib/WebDAO/Modal.pm
   WebDAO::Response:
     file: lib/WebDAO/Response.pm
   WebDAO::Session:
@@ -85,4 +89,4 @@ requires:
   XML::LibXML: 0
 resources:
   license: http://dev.perl.org/licenses/
-version: 1.06
+version: 2.0_1

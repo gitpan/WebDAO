@@ -1,5 +1,5 @@
 package WebDAO::CVcgi;
-#$Id: CVcgi.pm 756 2010-05-02 12:18:38Z zag $
+#$Id: CVcgi.pm 852 2010-10-17 18:57:02Z zag $
 
 =head1 NAME
 
@@ -45,6 +45,7 @@ sub print {
     my $self = shift;
     print @_;
 }
+
 =head2 referer
 
 Get current referer

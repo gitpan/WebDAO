@@ -1,4 +1,11 @@
 Revision history for Perl extension WebDAO.
+
+2.0_1
+    - traverse method
+    - rename core mothods to form _METHOD_
+    - modal components
+    -  pre-, fetch- and post- fetch objects
+
     
 1.06
     - add set_* methods for output format's
@@ -85,4 +92,4 @@ Revision history for Perl extension WebDAO.
 	- original version; created by h2xs 1.22
 	- import into sf.net cvs
 
-#$Id: Changes 821 2010-08-14 06:22:15Z zag $
+#$Id: Changes 852 2010-10-17 18:57:02Z zag $

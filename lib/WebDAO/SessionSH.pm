@@ -1,5 +1,5 @@
 package WebDAO::SessionSH;
-#$Id: SessionSH.pm 756 2010-05-02 12:18:38Z zag $
+#$Id: SessionSH.pm 848 2010-10-17 18:11:00Z zag $
 
 =head1 NAME
 
@@ -25,7 +25,10 @@ sub Init {
     #warn Dumper \%args;
     $self->SUPER::Init(@_);
     delete $args{store};
+    delete $args{cv};
     $self->U_id( rand(100) );
+    #setup default method 
+    $ENV{REQUEST_METHOD} ||="GET";
     Params $self ( \%args );
 }
 
@@ -52,7 +55,7 @@ Zahatski Aliaksandr, E<lt>zag@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2002-2009 by Zahatski Aliaksandr
+Copyright 2002-2010 by Zahatski Aliaksandr
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself. 
