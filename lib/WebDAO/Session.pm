@@ -1,5 +1,5 @@
 package WebDAO::Session;
-#$Id: Session.pm 852 2010-10-17 18:57:02Z zag $
+#$Id: Session.pm 899 2010-11-23 09:31:23Z zag $
 
 =head1 NAME
 
@@ -220,7 +220,7 @@ sub print_header() {
 
 =head2 request_method
 
-return Req Method
+return Req Method [GET, POST, DELETE, PUT ]
 
 =cut
 sub request_method {

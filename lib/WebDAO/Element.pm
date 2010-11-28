@@ -1,5 +1,5 @@
 package WebDAO::Element;
-#$Id: Element.pm 852 2010-10-17 18:57:02Z zag $
+#$Id: Element.pm 900 2010-11-24 11:21:02Z zag $
 
 =head1 NAME
 
@@ -132,7 +132,11 @@ sub __any_path {
         }
 
         #call method (only one param may be return)
-        my ($res) = $self->$method(%args);
+        my ($res, @path1) = $self->$method(%args);
+        if ( scalar(@path1) ) {
+            #method may return extra path
+            return $res, \@path1;
+        }
         return $res, \@path;
     }
     undef;
@@ -267,7 +271,7 @@ sub post_format {
     return [];
 }
 
-sub fetch { my $self = shift; return [] }
+sub fetch { undef } #return undef
 
 sub _destroy {
     my $self = shift;

@@ -1,6 +1,6 @@
 package WebDAO::Container;
 
-#$Id: Container.pm 852 2010-10-17 18:57:02Z zag $
+#$Id: Container.pm 913 2010-11-28 17:16:46Z zag $
 
 =head1 NAME
 
@@ -228,7 +228,6 @@ sub _traverse_ {
 =cut
 
     my ( $next_name, @path ) = @_;
-
     #check if exist object with some name
     if ( my $obj = $self->_get_obj_by_name($next_name) ) {
 

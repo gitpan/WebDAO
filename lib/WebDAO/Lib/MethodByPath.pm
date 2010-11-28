@@ -1,5 +1,5 @@
 package WebDAO::Lib::MethodByPath;
-#$Id: MethodByPath.pm 464 2009-02-22 16:07:56Z zag $
+#$Id: MethodByPath.pm 913 2010-11-28 17:16:46Z zag $
 
 =head1 NAME
 
@@ -29,34 +29,9 @@ sub init {
 sub fetch {
     my $self = shift;
     my $sess = shift;
-
-    #first get object;
     my @path   = @{ $sess->call_path( $self->_path ) };
-    my $method = pop @path;
-
-    #try get object by path
-    if ( my $object = $self->getEngine->_get_object_by_path( \@path ) ) {
-        unless ($method) {
-            _log1 $self "Method not found by path " . $self->_path;
-            return;
-        }
-        else {
-
-            #check and call method
-            if ( UNIVERSAL::can( $object, $method ) ) {
-                return $object->$method( @{ $self->_args } );
-            }
-            else {
-                _log1 $self "Method: $method not found at class $object";
-                return;
-            }
-        }
-
-    }
-    else {
-        _log1 $self "ERRR: Not found object for path " . $self->_path;
-    }
-    return undef;
+    my ( $src, $res ) = $self->getEngine->_traverse_( $sess, @path );
+    return $res;
 }
 
 1;

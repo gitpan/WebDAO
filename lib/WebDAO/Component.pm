@@ -1,5 +1,5 @@
 package WebDAO::Component;
-#$Id: Component.pm 500 2009-03-01 18:54:16Z zag $
+#$Id: Component.pm 884 2010-11-17 12:01:36Z zag $
 
 =head1 NAME
 
@@ -31,9 +31,11 @@ sub url_method {
     push @upath, $method if defined $method;
     my $sess = $self->getEngine->_session;
     if ( $sess->set_absolute_url() ) {
+        my $root = $sess->Cgi_env->{base_url};
         unshift @upath, $sess->Cgi_env->{base_url};
     }
-
+    #hack !!! clear / on begin
+    #s{^/}{} for @upath;
     my $path = join '/' => @upath;
     my $str = '';
     if (@_) {
