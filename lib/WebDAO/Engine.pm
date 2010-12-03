@@ -1,6 +1,6 @@
 package WebDAO::Engine;
 
-#$Id: Engine.pm 913 2010-11-28 17:16:46Z zag $
+#$Id: Engine.pm 922 2010-12-03 09:57:19Z zag $
 
 =head1 NAME
 
@@ -244,7 +244,13 @@ sub __handle_out__ {
     my $sess = shift;
     for (@_) {
         if ( UNIVERSAL::isa($_, 'WebDAO::Element' ) ) {
+         $self->__handle_out__( $sess, $_->pre_fetch($sess) )
+              if UNIVERSAL::can( $_, 'pre_fetch' );
+
          $self->__handle_out__( $sess, $_->fetch($sess) );
+            $self->__handle_out__( $sess, $_->post_fetch($sess) )
+              if UNIVERSAL::can( $_, 'post_fetch' );
+        
         } elsif ( ref($_) eq 'CODE') {
             return $self->__handle_out__( $sess, $_->($sess) );
         } else {

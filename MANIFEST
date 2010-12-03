@@ -51,8 +51,6 @@ lib/WebDAO/Store/Storable.pm
 lib/WebDAO/Test.pm
 Makefile.PL
 MANIFEST
-MANIFEST.SKIP
-MYMETA.yml
 README
 script/wd_cgi.pl
 script/wd_fcgi.fpl
