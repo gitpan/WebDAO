@@ -1,6 +1,9 @@
 Revision history for Perl extension WebDAO.
 
 
+2.0_5
+    - wrap raw text answers to response object
+    - handle response object as return value
 2.0_4
     - handle pre/post_fetch methods when Element come in answer
     - use __extra_path only for childs pathes
@@ -104,4 +107,4 @@ Revision history for Perl extension WebDAO.
 	- original version; created by h2xs 1.22
 	- import into sf.net cvs
 
-#$Id: Changes 924 2010-12-03 09:59:05Z zag $
+#$Id: Changes 925 2010-12-07 13:01:15Z zag $
