@@ -1,6 +1,7 @@
 Revision history for Perl extension WebDAO.
 
-
+2.0_6
+    - code clean
 2.0_5
     - wrap raw text answers to response object
     - handle response object as return value
@@ -107,4 +108,4 @@ Revision history for Perl extension WebDAO.
 	- original version; created by h2xs 1.22
 	- import into sf.net cvs
 
-#$Id: Changes 925 2010-12-07 13:01:15Z zag $
+#$Id: Changes 926 2010-12-22 14:52:02Z zag $
