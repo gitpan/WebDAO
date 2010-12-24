@@ -1,6 +1,6 @@
 package WebDAO::Engine;
 
-#$Id: Engine.pm 926 2010-12-22 14:52:02Z zag $
+#$Id: Engine.pm 928 2010-12-23 12:35:57Z zag $
 
 =head1 NAME
 
@@ -71,7 +71,7 @@ sub init {
     }
     elsif ( my $lex = $opt{lex} ) {
         map { $_->value($self) } @{ $lex->auto };
-        my ( $pre, $fetch, $post ) = @{ $lex->__tmpl__ };
+        my ( $pre, $fetch, $post ) = @{ $lex->__tmpl__ || [] };
         $self->__add_childs__( 0, map { $_->value($self) } @$pre );
         $self->_add_childs_( map { $_->value($self) } @$fetch );
         $self->__add_childs__( 2, map { $_->value($self) } @$post );
