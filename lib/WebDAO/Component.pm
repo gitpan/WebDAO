@@ -1,5 +1,5 @@
 package WebDAO::Component;
-#$Id: Component.pm 921 2010-12-03 09:56:52Z zag $
+#$Id$
 
 =head1 NAME
 

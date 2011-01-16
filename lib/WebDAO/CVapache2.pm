@@ -1,5 +1,5 @@
 package WebDAO::CVapache2;
-#$Id: CVapache2.pm 584 2009-07-26 12:59:25Z zag $
+#$Id$
 
 =head1 NAME
 

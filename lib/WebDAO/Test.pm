@@ -1,6 +1,6 @@
 package WebDAO::Test;
 
-#$Id: Test.pm 852 2010-10-17 18:57:02Z zag $
+#$Id$
 
 =head1 NAME
 
@@ -248,6 +248,12 @@ sub _init {
     $self->{ctr} = shift;
     return $self->SUPER::_init(@_);
 
+}
+
+sub response {
+    my $self = shift;
+    my $res = shift || return;
+    $self->print( $res->{data} );
 }
 
 sub print {

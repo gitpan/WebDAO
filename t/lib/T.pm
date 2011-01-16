@@ -4,7 +4,7 @@
 #
 #       AUTHOR:  Aliaksandr P. Zahatski, <zahatski@gmail.com>
 #===============================================================================
-#$Id: T.pm 849 2010-10-17 18:11:39Z zag $
+#$Id$
 
 use strict;
 use warnings;

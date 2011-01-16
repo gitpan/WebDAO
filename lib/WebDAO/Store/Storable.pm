@@ -1,6 +1,6 @@
 package WebDAO::Store::Storable;
 
-#$Id: Storable.pm 483 2009-02-25 19:31:33Z zag $
+#$Id$
 
 =head1 NAME
 

@@ -1,6 +1,6 @@
 package WebDAO::Lex;
 
-#$Id: Lex.pm 852 2010-10-17 18:57:02Z zag $
+#$Id$
 
 =head1 NAME
 

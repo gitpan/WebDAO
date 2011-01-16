@@ -1,5 +1,7 @@
 Revision history for Perl extension WebDAO.
 
+2.0_8
+    - enhance work with cookie headers
 
 2.0_7
     - fix empty index page
@@ -112,4 +114,4 @@ Revision history for Perl extension WebDAO.
 	- original version; created by h2xs 1.22
 	- import into sf.net cvs
 
-#$Id: Changes 928 2010-12-23 12:35:57Z zag $
+#$Id$

@@ -1,5 +1,5 @@
 package WebDAO::Base;
-#$Id: Base.pm 575 2009-07-15 09:14:58Z zag $
+#$Id$
 
 =head1 NAME
 

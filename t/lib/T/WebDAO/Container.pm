@@ -4,7 +4,7 @@
 #
 #       AUTHOR:  Aliaksandr P. Zahatski, <zahatski@gmail.com>
 #===============================================================================
-#$Id: Container.pm 849 2010-10-17 18:11:39Z zag $
+#$Id$
 package T::WebDAO::Container;
 use strict;
 use warnings;

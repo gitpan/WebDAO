@@ -1,4 +1,4 @@
-#$Id: Directives2.pm 97 2007-06-17 13:18:56Z zag $
+#$Id$
 
 package Apache::Directives2;
 

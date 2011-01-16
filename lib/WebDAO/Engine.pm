@@ -1,6 +1,6 @@
 package WebDAO::Engine;
 
-#$Id: Engine.pm 928 2010-12-23 12:35:57Z zag $
+#$Id$
 
 =head1 NAME
 

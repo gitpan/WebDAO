@@ -1,5 +1,5 @@
 package WebDAO::SessionSH;
-#$Id: SessionSH.pm 848 2010-10-17 18:11:00Z zag $
+#$Id$
 
 =head1 NAME
 

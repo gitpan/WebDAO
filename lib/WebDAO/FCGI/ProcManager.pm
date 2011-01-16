@@ -5,7 +5,7 @@ package WebDAO::FCGI::ProcManager;
 # Public License, Version 2.1.  Please read the important licensing and
 # disclaimer information included below.
 
-# $Id: ProcManager.pm 483 2009-02-25 19:31:33Z zag $
+# $Id$
 
 use strict;
 use Exporter;

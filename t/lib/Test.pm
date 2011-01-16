@@ -1,6 +1,6 @@
 package Test;
 
-#$Id: Test.pm 850 2010-10-17 18:36:51Z zag $
+#$Id$
 
 =head1 NAME
 

@@ -4,7 +4,7 @@
 #
 #       AUTHOR:  Aliaksandr P. Zahatski, <zahatski@gmail.com>
 #===============================================================================
-#$Id: 14_test_any_method.t 849 2010-10-17 18:11:39Z zag $
+#$Id$
 package TestElement;
 use warnings;
 use strict;

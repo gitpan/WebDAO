@@ -1,5 +1,5 @@
 package WebDAO::Lexer::Lbase;
-#$Id: Lbase.pm 464 2009-02-22 16:07:56Z zag $
+#$Id$
 
 =head1 NAME
 

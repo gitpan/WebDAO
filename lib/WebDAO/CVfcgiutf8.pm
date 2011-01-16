@@ -1,5 +1,5 @@
 package WebDAO::CVfcgiutf8;
-#$Id: CVfcgiutf8.pm 750 2010-05-01 10:21:25Z zag $
+#$Id$
 
 =head1 NAME
 

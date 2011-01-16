@@ -1,6 +1,6 @@
 package WebDAO::Container;
 
-#$Id: Container.pm 913 2010-11-28 17:16:46Z zag $
+#$Id$
 
 =head1 NAME
 

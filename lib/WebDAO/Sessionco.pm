@@ -1,5 +1,5 @@
 package WebDAO::Sessionco;
-#$Id: Sessionco.pm 483 2009-02-25 19:31:33Z zag $
+#$Id$
 
 =head1 NAME
 
@@ -38,8 +38,6 @@ sub Init {
         }
     );
     $self->SUPER::Init(%param);
-    set_header $self ( "-TYPE",    "text\/html" );
-#    set_header $self ( "-EXPIRES", "-1d" );
 }
 
 sub get_id {
@@ -53,9 +51,7 @@ sub get_id {
         U_id $self ( $coo );
     }
     $self->Cookie_name()->{-VALUE} = $coo;
-
-    my $new_coo = $_cgi->get_cookie( $self->Cookie_name() );
-    $self->set_header( "-COOKIE", $new_coo );
+    $_cgi->set_cookie($self->Cookie_name() );
     return $coo;
 }
 1;
