@@ -58,7 +58,6 @@ script/wd_shell.pl
 t/02_WebDAO::Response.t
 t/1.t
 t/11.t
-t/12_get_object_by_path.t
 t/13_extra_path.t
 t/14_test_any_method.t
 t/Lexer::Lmethod.t

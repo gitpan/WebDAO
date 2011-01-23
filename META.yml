@@ -19,7 +19,7 @@ provides:
     file: lib/WebDAO/Test.pm
   WebDAO:
     file: lib/WebDAO.pm
-    version: 2.0_9
+    version: 2.0_10
   WebDAO::Base:
     file: lib/WebDAO/Base.pm
   WebDAO::CVapache2:
@@ -89,4 +89,4 @@ requires:
   XML::LibXML: 0
 resources:
   license: http://dev.perl.org/licenses/
-version: 2.0_9
+version: 2.0_10
