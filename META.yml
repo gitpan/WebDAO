@@ -4,7 +4,7 @@ author:
   - 'Zahatski Aliaksandr, E<lt>zag@cpan.orgE<gt>'
 configure_requires:
   Module::Build: 0.36
-generated_by: 'Module::Build version 0.3607'
+generated_by: 'Module::Build version 0.3624'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -19,7 +19,7 @@ provides:
     file: lib/WebDAO/Test.pm
   WebDAO:
     file: lib/WebDAO.pm
-    version: 2.0_12
+    version: 2.0_13
   WebDAO::Base:
     file: lib/WebDAO/Base.pm
   WebDAO::CVapache2:
@@ -89,4 +89,4 @@ requires:
   XML::LibXML: 0
 resources:
   license: http://dev.perl.org/licenses/
-version: 2.0_12
+version: 2.0_13
