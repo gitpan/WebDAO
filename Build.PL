@@ -10,11 +10,12 @@ Module::Build->new
 	      'Getopt::Long'=>2.35,
 	      'FCGI'=>0.67,
 	      'Test::Class'=>0,
+	      'URI'=>1.36,
 	       },
   script_files=>[qw!
-    script/wd_cgi.pl
     script/wd_fcgi.fpl
     script/wd_shell.pl
+    script/webdao.psgi
   !],
     create_makefile_pl=>$ENV{DO_OUTCPAN} ? 'traditional':'passthrough'
     )->create_build_script;
