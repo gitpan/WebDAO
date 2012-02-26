@@ -23,12 +23,10 @@ contrib/webdao
 contrib/webdao-book.pod6
 lib/WebDAO.pm
 lib/WebDAO/Base.pm
-lib/WebDAO/Comp/ListEnv.pm
 lib/WebDAO/Component.pm
 lib/WebDAO/Config.pm
 lib/WebDAO/Container.pm
 lib/WebDAO/CV.pm
-lib/WebDAO/CVapache2.pm
 lib/WebDAO/CVfcgi.pm
 lib/WebDAO/Element.pm
 lib/WebDAO/Engine.pm

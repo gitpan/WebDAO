@@ -17,19 +17,15 @@ provides:
     file: lib/WebDAO/Test.pm
   WebDAO:
     file: lib/WebDAO.pm
-    version: 2.0
+    version: 2.1
   WebDAO::Base:
     file: lib/WebDAO/Base.pm
   WebDAO::CV:
     file: lib/WebDAO/CV.pm
-  WebDAO::CVapache2:
-    file: lib/WebDAO/CVapache2.pm
   WebDAO::CVfcgi:
     file: lib/WebDAO/CVfcgi.pm
   WebDAO::CVfcgiold:
     file: lib/WebDAO/CVfcgi.pm
-  WebDAO::Comp::ListEnv:
-    file: lib/WebDAO/Comp/ListEnv.pm
   WebDAO::Component:
     file: lib/WebDAO/Component.pm
   WebDAO::Config:
@@ -93,4 +89,4 @@ requires:
   XML::Flow: 0.86
 resources:
   license: http://dev.perl.org/licenses/
-version: 2.0
+version: 2.1
