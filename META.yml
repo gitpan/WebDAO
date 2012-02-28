@@ -17,7 +17,7 @@ provides:
     file: lib/WebDAO/Test.pm
   WebDAO:
     file: lib/WebDAO.pm
-    version: 2.1
+    version: v2.2.0
   WebDAO::Base:
     file: lib/WebDAO/Base.pm
   WebDAO::CV:
@@ -84,9 +84,10 @@ requires:
   Encode: 0
   FCGI: 0.67
   Getopt::Long: 2.35
+  HTTP::Body: 1.11
   Test::Class: 0
   URI: 1.36
   XML::Flow: 0.86
 resources:
   license: http://dev.perl.org/licenses/
-version: 2.1
+version: v2.2.0

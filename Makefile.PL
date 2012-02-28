@@ -17,6 +17,7 @@ WriteMakefile
                            'URI' => '1.36',
                            'Test::Class' => 0,
                            'DateTime::Format::HTTP' => '0.37',
+                           'HTTP::Body' => '1.11',
                            'Encode' => 0,
                            'XML::Flow' => '0.86',
                            'FCGI' => '0.67'
