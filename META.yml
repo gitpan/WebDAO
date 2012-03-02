@@ -17,7 +17,7 @@ provides:
     file: lib/WebDAO/Test.pm
   WebDAO:
     file: lib/WebDAO.pm
-    version: v2.2.0
+    version: v2.2.1
   WebDAO::Base:
     file: lib/WebDAO/Base.pm
   WebDAO::CV:
@@ -64,8 +64,6 @@ provides:
     file: lib/WebDAO/Response.pm
   WebDAO::Session:
     file: lib/WebDAO/Session.pm
-  WebDAO::SessionID:
-    file: lib/WebDAO/SessionID.pm
   WebDAO::SessionSH:
     file: lib/WebDAO/SessionSH.pm
   WebDAO::Sessionco:
@@ -90,4 +88,4 @@ requires:
   XML::Flow: 0.86
 resources:
   license: http://dev.perl.org/licenses/
-version: v2.2.0
+version: v2.2.1

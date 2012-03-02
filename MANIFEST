@@ -43,7 +43,6 @@ lib/WebDAO/Modal.pm
 lib/WebDAO/Response.pm
 lib/WebDAO/Session.pm
 lib/WebDAO/Sessionco.pm
-lib/WebDAO/SessionID.pm
 lib/WebDAO/SessionSH.pm
 lib/WebDAO/Store/Abstract.pm
 lib/WebDAO/Store/Storable.pm
