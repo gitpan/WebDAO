@@ -17,7 +17,7 @@ provides:
     file: lib/WebDAO/Test.pm
   WebDAO:
     file: lib/WebDAO.pm
-    version: v2.2.1
+    version: v2.2.2
   WebDAO::Base:
     file: lib/WebDAO/Base.pm
   WebDAO::CV:
@@ -88,4 +88,4 @@ requires:
   XML::Flow: 0.86
 resources:
   license: http://dev.perl.org/licenses/
-version: v2.2.1
+version: v2.2.2
