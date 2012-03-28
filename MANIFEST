@@ -64,7 +64,7 @@ t/15.lex.t
 t/16_cv.t
 t/data/test1.ini
 t/data/test2.ini
-t/Lexer::method.t
+t/Lexer_method.t
 t/lib/T.pm
 t/lib/T/Engine.pm
 t/lib/T/WebDAO/Container.pm
@@ -76,3 +76,4 @@ t/lib/TestWDAO.pm
 t/test_util.t
 t/tests.t
 META.yml
+META.json
