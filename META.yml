@@ -21,7 +21,7 @@ provides:
     version: 0
   WebDAO:
     file: lib/WebDAO.pm
-    version: 2.03
+    version: 2.04
   WebDAO::Base:
     file: lib/WebDAO/Base.pm
     version: 0
@@ -118,4 +118,4 @@ requires:
   XML::Flow: 0.86
 resources:
   license: http://dev.perl.org/licenses/
-version: 2.03
+version: 2.04
