@@ -44,7 +44,7 @@
       },
       "WebDAO" : {
          "file" : "lib/WebDAO.pm",
-         "version" : "2.04"
+         "version" : "2.05"
       },
       "WebDAO::Base" : {
          "file" : "lib/WebDAO/Base.pm",
@@ -165,5 +165,5 @@
          "http://dev.perl.org/licenses/"
       ]
    },
-   "version" : "2.04"
+   "version" : "2.05"
 }
