@@ -4,7 +4,7 @@
       "Zahatski Aliaksandr, E<lt>zag@cpan.orgE<gt>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "Module::Build version 0.38, CPAN::Meta::Converter version 2.120351",
+   "generated_by" : "Module::Build version 0.4, CPAN::Meta::Converter version 2.120351",
    "license" : [
       "perl_5"
    ],
@@ -16,7 +16,7 @@
    "prereqs" : {
       "configure" : {
          "requires" : {
-            "Module::Build" : "0.38"
+            "Module::Build" : "0.4"
          }
       },
       "runtime" : {
@@ -44,7 +44,7 @@
       },
       "WebDAO" : {
          "file" : "lib/WebDAO.pm",
-         "version" : "2.06"
+         "version" : "2.07"
       },
       "WebDAO::Base" : {
          "file" : "lib/WebDAO/Base.pm",
@@ -165,5 +165,5 @@
          "http://dev.perl.org/licenses/"
       ]
    },
-   "version" : "2.06"
+   "version" : "2.07"
 }
