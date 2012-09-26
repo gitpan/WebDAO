@@ -3,15 +3,6 @@ Changes
 contrib/About.pod
 contrib/About.ru.pod
 contrib/Definitions.ru.pod
-contrib/examples/01/index.xhtml
-contrib/examples/02/index.xhtml
-contrib/examples/03/index.xhtml
-contrib/examples/03/MyTest.pm
-contrib/examples/03/MyTest.t
-contrib/examples/index.xhtml
-contrib/examples/lib/MyMenu.pm
-contrib/examples/lib/MyTest.pm
-contrib/examples/MyTest.pm
 contrib/Install.pod
 contrib/Install.ru.pod
 contrib/Preface.pod6
