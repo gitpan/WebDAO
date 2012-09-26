@@ -195,15 +195,12 @@ sub xget {
     my $eng = $self->{eng};
 
     #check if exists args
-    if ( $path =~ /\?/ ) {
         my $pars;
         ( $path, $pars ) = split /\?/, $path;
-        if ($pars) {
-            my %args = map { split /\=/, $_ } split /\&/, $pars;
-            $eng->_session->Params( \%args );
-        }
-    }
-    return $self->resolve_path( $path );
+        my %args = ();
+        %args = map { split /\=/, $_ } split /\&/, $pars if $pars;
+        $eng->_session->Params( \%args );
+    return $self->resolve_path( $path, @_ );
 #    return $eng->resolve_path( $eng->_session, $path );
 }
 
@@ -224,7 +221,7 @@ sub resolve_path {
 
     #skip root objects
     my ( undef, @path ) = split( /\//, $path );
-    my ( $src, $res ) = $self->eng->_traverse_( $sess, @path );
+    my ( $src, $res ) = ( shift || $self->eng)->_traverse_( $sess, @path );
     $res;
 }
 
@@ -297,6 +294,7 @@ sub write   {
     }
 sub close   { }
 sub headers { return $_[0]->{headers} }
+sub output { ${ $_[0]->{out} } }
 
 1;
 

@@ -75,5 +75,3 @@ t/lib/TestLoad.pm
 t/lib/TestWDAO.pm
 t/test_util.t
 t/tests.t
-META.yml
-META.json
