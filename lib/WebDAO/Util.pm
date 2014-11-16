@@ -4,14 +4,12 @@
 #
 #       AUTHOR:  Aliaksandr P. Zahatski, <zahatski@gmail.com>
 #===============================================================================
-#$Id$
 package WebDAO::Util;
 use strict;
 use warnings;
 use Carp;
 use WebDAO::Engine;
 use WebDAO::Session;
-use WebDAO::Store::Abstract;
 
 =head2  load_module <package>
 
@@ -84,8 +82,6 @@ sub get_classes {
     my %defaults = (
         wdEngine     => 'WebDAO::Engine',
         wdSession    => 'WebDAO::Session',
-        wdStore      => 'WebDAO::Store::Abstract',
-        wdStorePar   => undef,
         wdSessionPar => undef,
         wdEnginePar  => undef,
         @_
@@ -93,10 +89,6 @@ sub get_classes {
     my $env          = delete $defaults{__env}     || \%ENV;
     my $need_preload = delete $defaults{__preload} || 0;
 
-    $defaults{wdStore} =
-         $env->{WD_STORE}
-      || $env->{wdStore}
-      || $defaults{wdStore};
     $defaults{wdSession} =
          $env->{WD_SESSION}
       || $env->{wdSession}
@@ -111,17 +103,13 @@ sub get_classes {
       WebDAO::Util::_parse_str_to_hash( $env->{WD_ENGINE_PAR}
           || $env->{wdEnginePar} )
       || {};
-    $defaults{wdStorePar} =
-      WebDAO::Util::_parse_str_to_hash( $env->{WD_STORE_PAR}
-          || $env->{wdStorePar} )
-      || {};
     $defaults{wdSessionPar} =
       WebDAO::Util::_parse_str_to_hash( $env->{WD_SESSION_PAR}
           || $env->{wdSessionPar} )
       || {};
 
     if ($need_preload) {
-        for (qw/wdStore  wdSession  wdEngine /) {
+        for (qw/wdSession  wdEngine /) {
             WebDAO::Util::load_module( $defaults{$_} );
         }
     }

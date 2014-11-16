@@ -1,5 +1,4 @@
 package WebDAO::Base;
-#$Id$
 
 =head1 NAME
 
@@ -16,51 +15,9 @@ WebDAO::Base - Base class
 use Data::Dumper;
 use Carp;
 @WebDAO::Base::ISA    = qw(Exporter);
-@WebDAO::Base::EXPORT = qw(attributes sess_attributes);
+@WebDAO::Base::EXPORT = qw(mk_attr);
 
 $DEBUG = 0;    # assign 1 to it to see code generated on the fly
-
-sub mk_sess_attr {
-    my ($pkg) = caller;
-    shift if $_[0] =~ /\:\:/ or $_[0] eq $pkg;
-#    croak "Error: attributes() invoked multiple times"
-#      if scalar @{"${pkg}::_SESS_ATTRIBUTES_"};
-    my %attrs = @_;
-    %{"${pkg}::_SESS_ATTRIBUTES_"} = %attrs;
-    my $code = "";
-    foreach my $attr (keys %attrs) {
-        # If the accessor is already present, give a warning
-        if ( UNIVERSAL::can( $pkg, "$attr" ) ) {
-            carp "$pkg already has method: $attr";
-            next;
-        }
-        $code .= _define_sess_accessor( $pkg, $attr, $attrs{$attr} );
-    }
-    eval $code;
-    if ($@) {
-        die "ERROR defining and attributes for '$pkg':"
-          . "\n\t$@\n"
-          . "-----------------------------------------------------"
-          . $code;
-    }
-}
-
-
-sub _define_sess_accessor {
-    my ( $pkg, $attr, $default ) = @_;
-
-    # qq makes this block behave like a double-quoted string
-    my $code = qq{
-    package $pkg;
-    sub $attr {                                      # Accessor ...
-      my \$self=shift;
-      my \$ret = \@_ ? \$self->set_attribute("$attr",shift):\$self->get_attribute("$attr");
-      return \${"${pkg}::_SESS_ATTRIBUTES_"}{"$attr"} unless defined \$ret;
-      \$ret
-    }
-  };
-    $code;
-}
 
 sub mk_attr {
     my ($pkg) = caller;
@@ -105,69 +62,6 @@ sub _define_attr_accessor {
     $code;
 }
 
-sub sess_attributes {
-    my ($pkg) = caller;
-    shift if $_[0] =~ /\:\:/ or $_[0] eq $pkg;
-    croak "Error: attributes() invoked multiple times"
-      if scalar @{"${pkg}::_SESS_ATTRIBUTES_"};
-    my %attrs = map { $_=>undef} @_;
-    %{"${pkg}::_SESS_ATTRIBUTES_"} = %attrs;
-    my $code = "";
-    foreach my $attr (@_) {
-        # If the accessor is already present, give a warning
-        if ( UNIVERSAL::can( $pkg, "$attr" ) ) {
-            carp "$pkg already has method: $attr";
-            next;
-        }
-        $code .= _define_accessor( $pkg, $attr );
-    }
-    eval $code;
-    if ($@) {
-        die "ERROR defining and attributes for '$pkg':"
-          . "\n\t$@\n"
-          . "-----------------------------------------------------"
-          . $code;
-    }
-}
-
-sub attributes {
-    my ($pkg) = caller;
-    shift if $_[0] =~ /\:\:/ or $_[0] eq $pkg;
-    my $code = "";
-    foreach my $attr (@_) {
-        print STDERR "  defining method $attr\n" if $DEBUG;
-
-        # If the accessor is already present, give a warning
-        if ( UNIVERSAL::can( $pkg, "$attr" ) ) {
-            carp "$pkg already has rtl method: $attr";
-            next;
-        }
-        $code .= _define_accessor( $pkg, $attr );
-    }
-    eval $code;
-    if ($@) {
-        die "ERROR defining  rtl_attributes for '$pkg':"
-          . "\n\t$@\n"
-          . "-----------------------------------------------------"
-          . $code;
-    }
-
-}
-
-sub _define_accessor {
-    my ( $pkg, $attr ) = @_;
-
-    # qq makes this block behave like a double-quoted string
-    my $code = qq{
-    package $pkg;
-    sub $attr {                                      # Accessor ...
-      my \$self=shift;
-      \@_ ? \$self->set_attribute("$attr",shift):\$self->get_attribute("$attr");
-    }
-  };
-    $code;
-}
-
 sub _define_constructor {
     my $pkg  = shift;
     my $code = qq {
@@ -183,58 +77,6 @@ sub _define_constructor {
     }
   };
     $code;
-}
-
-sub get_attribute_names {
-    my $pkg = shift;
-    $pkg = ref($pkg) if ref($pkg);
-    my @result = keys %{"${pkg}::_SESS_ATTRIBUTES_"};
-    if ( defined( @{"${pkg}::ISA"} ) ) {
-        foreach my $base_pkg ( @{"${pkg}::ISA"} ) {
-            push( @result, get_attribute_names($base_pkg) );
-        }
-    }
-    @result;
-}
-
-sub set_attribute {
-    my ( $obj, $attr_name, $attr_value ) = @_;
-    $obj->{"Var"}->{$attr_name} = $attr_value;
-}
-
-#
-sub get_attribute {
-    my ( $self, $attr_name ) = @_;
-    return $self->{"Var"}->{$attr_name};
-}
-
-# $obj->set_attributes (name => 'John', age => 23);
-# Or, $obj->set_attributes (['name', 'age'], ['John', 23]);
-sub set_attributes {
-    my $obj = shift;
-    my $attr_name;
-    if ( ref( $_[0] ) ) {
-        my ( $attr_name_list, $attr_value_list ) = @_;
-        my $i = 0;
-        foreach $attr_name (@$attr_name_list) {
-            $obj->$attr_name( $attr_value_list->[ $i++ ] );
-        }
-    }
-    else {
-        my ( $attr_name, $attr_value );
-        while (@_) {
-            $attr_name  = shift;
-            $attr_value = shift;
-            $obj->$attr_name($attr_value);
-        }
-    }
-}
-
-# @attrs = $obj->get_attributes (qw(name age));
-sub get_attributes {
-    my $obj = shift;
-    my (@retval);
-    map { $obj->$_() } @_;
 }
 
 sub new {
@@ -303,7 +145,7 @@ Zahatski Aliaksandr, E<lt>zag@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2002-2009 by Zahatski Aliaksandr
+Copyright 2002-2014 by Zahatski Aliaksandr
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself. 

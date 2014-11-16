@@ -1,0 +1,89 @@
+---
+abstract: 'platform for easy creation of high-performance and scalable web applications'
+author:
+  - 'Zahatski Aliaksandr, E<lt>zag@cpan.orgE<gt>'
+build_requires: {}
+configure_requires:
+  Module::Build: 0.42
+dynamic_config: 1
+generated_by: 'Module::Build version 0.4204, CPAN::Meta::Converter version 2.133380'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: WebDAO
+provides:
+  Test::Writer:
+    file: lib/WebDAO/Test.pm
+  TestCV:
+    file: lib/WebDAO/Test.pm
+  WebDAO:
+    file: lib/WebDAO.pm
+    version: 2.15
+  WebDAO::Base:
+    file: lib/WebDAO/Base.pm
+  WebDAO::CV:
+    file: lib/WebDAO/CV.pm
+  WebDAO::CVfcgi:
+    file: lib/WebDAO/CVfcgi.pm
+  WebDAO::CVfcgiold:
+    file: lib/WebDAO/CVfcgi.pm
+  WebDAO::Component:
+    file: lib/WebDAO/Component.pm
+  WebDAO::Config:
+    file: lib/WebDAO/Config.pm
+    version: 0.3
+  WebDAO::Container:
+    file: lib/WebDAO/Container.pm
+  WebDAO::Element:
+    file: lib/WebDAO/Element.pm
+  WebDAO::Engine:
+    file: lib/WebDAO/Engine.pm
+  WebDAO::FCGI::ProcManager:
+    file: lib/WebDAO/FCGI/ProcManager.pm
+    version: 0.17
+  WebDAO::Fcgi::Writer:
+    file: lib/WebDAO/CVfcgi.pm
+  WebDAO::Lex:
+    file: lib/WebDAO/Lex.pm
+  WebDAO::Lexer::base:
+    file: lib/WebDAO/Lexer/base.pm
+  WebDAO::Lexer::method:
+    file: lib/WebDAO/Lexer/method.pm
+  WebDAO::Lexer::object:
+    file: lib/WebDAO/Lexer/object.pm
+  WebDAO::Lexer::regclass:
+    file: lib/WebDAO/Lexer/regclass.pm
+  WebDAO::Lexer::text:
+    file: lib/WebDAO/Lexer/text.pm
+  WebDAO::Lib::MethodByPath:
+    file: lib/WebDAO/Lib/MethodByPath.pm
+  WebDAO::Lib::RawHTML:
+    file: lib/WebDAO/Lib/RawHTML.pm
+  WebDAO::Modal:
+    file: lib/WebDAO/Modal.pm
+  WebDAO::Response:
+    file: lib/WebDAO/Response.pm
+  WebDAO::Session:
+    file: lib/WebDAO/Session.pm
+  WebDAO::SessionSH:
+    file: lib/WebDAO/SessionSH.pm
+  WebDAO::Sessionco:
+    file: lib/WebDAO/Sessionco.pm
+  WebDAO::Test:
+    file: lib/WebDAO/Test.pm
+  WebDAO::Util:
+    file: lib/WebDAO/Util.pm
+requires:
+  DateTime: 0.37
+  DateTime::Format::HTTP: 0.37
+  Encode: 0
+  FCGI: 0.67
+  Getopt::Long: 2.35
+  HTTP::Body: 1.11
+  Test::Class: 0
+  URI: 1.36
+  XML::Flow: 0.86
+resources:
+  license: http://dev.perl.org/licenses/
+version: 2.15
